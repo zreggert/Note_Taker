@@ -1,14 +1,28 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "",
+  "author": "Zack Eggert",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zreggert/Note_Taker.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "js"
+  ],
+  "bugs": {
+    "url": "https://github.com/zreggert/Note_Taker/issues"
+  },
+  "homepage": "https://github.com/zreggert/Note_Taker#readme",
+  "description": ""
 }
