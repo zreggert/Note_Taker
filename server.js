@@ -1,9 +1,30 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const noteDb = require(`./db/db.json`)
 
-app.get(`/`, (req, res) => {
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.static('./public'));
+
+app.get(`*`, (req, res) => {
     res.sendFile(`${__dirname}/public/index.html`)
+})
+
+app.get(`/notes`, (req, res) => {
+    res.sendFile(`${__dirname}/public/notes.html`)
+})
+
+app.get(`/api/notes`, (req, res) => {
+    console.log(`Sent notes api to client.`);
+    res.json(noteDb)
+})
+
+app.post(`/api/notes`, (req, res) => {
+    console.log(`You created a new note.`);
+    const note = req.body;
+    noteDb.push(note);
+    res.json(noteDb)
 })
 
 app.listen(port, () => {
